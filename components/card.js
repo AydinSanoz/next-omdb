@@ -1,25 +1,23 @@
-import Image from "next/image";
-
+import cat from "../assets/cat.jpg";
 export default function Card(props) {
 	console.log("props", props);
-	return (
-		<div class="card " style={{ width: 180 }}>
-			<img src={props.Poster} class="card-img-top" alt="..." />
-			<div class="card-body">
-				<h5 class="card-title">{props.Title}</h5>
-				<div class="row">
-					<div class="col">
-						<span class="card-text">{props.Type}</span>
-					</div>
-					<div class="col">
-						<span class="card-text">{props.Year}</span>
-					</div>
-				</div>
+	const noImg = "https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com";
 
-				<a href="#" class="btn btn-primary">
-					Add to Fav
-				</a>
+	return (
+		<div className="card container-sm" style={{ width: 200 }}>
+			<img
+				src={props.Poster === "N/A" ? noImg : props.Poster}
+				className="card-img-top"
+				alt={props.Title}
+				width="200"
+				height="250"
+			/>
+			<div className="card-body">
+				<h5 className="card-title mx-auto">{props.Title}</h5>
 			</div>
+			<a href="#" className="btn btn-primary">
+				Add to Fav
+			</a>
 		</div>
 	);
 }
