@@ -1,4 +1,4 @@
-import cat from "../assets/cat.jpg";
+import Link from "next/link";
 export default function Card(props) {
 	console.log("props", props);
 	const noImg = "https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com";
@@ -15,9 +15,9 @@ export default function Card(props) {
 			<div className="card-body">
 				<h5 className="card-title mx-auto">{props.Title}</h5>
 			</div>
-			<a href="#" className="btn btn-primary">
-				Add to Fav
-			</a>
+			<Link href="#">
+				<a className="btn btn-primary">Add to Fav</a>
+			</Link>
 		</div>
 	);
 }

@@ -8,7 +8,7 @@ export default (req, res) => {
 			params: {
 				apikey: APIKEY,
 				s: req.cookies.search || "all",
-				type: "episode",
+				type: "series",
 			},
 		})
 		.then(({ data }) => res.status(200).json(data.Search));

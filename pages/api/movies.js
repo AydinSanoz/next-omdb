@@ -1,5 +1,4 @@
 import axios from "axios";
-import Cookies from "js-cookie";
 
 export default (req, res) => {
 	const { BASEURL, APIKEY } = process.env;
@@ -8,7 +7,7 @@ export default (req, res) => {
 		.get(BASEURL, {
 			params: {
 				apikey: APIKEY,
-				s: req.cookies.search || "avatar",
+				s: req.cookies.search || "all",
 				type: "movie",
 			},
 		})
