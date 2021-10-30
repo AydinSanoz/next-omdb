@@ -1,18 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
 
 export default function Navbar(props) {
 	const [inputval, setInputval] = useState("");
-	console.log("Navbarpros", props);
-
 	const onChange = (e) => {
 		setInputval(e.target.value);
 	};
 	const onClick = () => {
-		console.log("hello");
 		Cookies.set("search", inputval);
 	};
 	return (
@@ -50,8 +46,8 @@ export default function Navbar(props) {
 						</li>
 
 						<li className="nav-item">
-							<Link href="contact">
-								<a className="nav-link active">Contact</a>
+							<Link href="favorites">
+								<a className="nav-link active">Favorites</a>
 							</Link>
 						</li>
 					</ul>

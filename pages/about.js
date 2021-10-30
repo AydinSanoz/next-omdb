@@ -1,7 +1,7 @@
+import Cookies from "js-cookie";
 import Image from "next/image";
 
 function About(props) {
-	console.log("props About", props);
 	return (
 		<div
 			style={{

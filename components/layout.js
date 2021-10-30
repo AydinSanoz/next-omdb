@@ -1,7 +1,6 @@
 import Navbar from "./navbar";
 
-export default function Layout({ children, ...props }) {
-	console.log("LayoutProps", props);
+export default function Layout({ children }) {
 	return (
 		<div>
 			<Navbar />
