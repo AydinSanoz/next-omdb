@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import { Nav } from "react-bootstrap";
 
 export default function Navbar(props) {
 	const [inputval, setInputval] = useState("");
@@ -30,7 +31,12 @@ export default function Navbar(props) {
 				>
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<div
+					className="collapse navbar-collapse"
+					id="navbarSupportedContent"
+					style={{ display: "flex" }}
+				>
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
 							<Link href="/">
