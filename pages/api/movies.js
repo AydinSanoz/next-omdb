@@ -6,6 +6,16 @@ export default (req, res) => {
 
 	axios
 		.get(BASEURL, {
+			method:"HEAD",
+			mode:"no cors",
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+		},
+		withCredentials: true,
+		credentials: 'same-origin',
+		crossdomain: true,
 			params: {
 				apikey: APIKEY,
 				s: req.cookies.search || "all",
