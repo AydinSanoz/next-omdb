@@ -1,6 +1,3 @@
-import Cookies from "js-cookie";
-import { useState, useEffect } from "react";
-
 export default function Card({ item, onClick }) {
 	const noImg = "https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com";
 	return (

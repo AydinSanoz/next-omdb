@@ -2,10 +2,10 @@ import useSWR from "swr";
 import { fetcher } from "../functions/fetcher";
 import Card from "./card";
 
-export default function Episodes(props) {
+export default function Episodes({ onClick }) {
 	const url = "http://localhost:3000/api/";
 	const { data, error } = useSWR(url, fetcher, {
-		initialData: props,
+		// initialData: props,
 		revalidateOnMount: true,
 		revalidateOnFocus: true,
 	});
@@ -35,7 +35,7 @@ export default function Episodes(props) {
 				}}
 			>
 				{data.map((item, i) => (
-					<Card key={i} {...item} />
+					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
 		</div>
