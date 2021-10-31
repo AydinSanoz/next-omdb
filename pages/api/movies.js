@@ -8,7 +8,7 @@ export default (req, res) => {
 		method: "HEAD",
 		mode: "no-cors",
 	});
-	const data = res.json()
+	const data = respond.json()
 		})
 		res.status(200).json(data.Search))
 		
