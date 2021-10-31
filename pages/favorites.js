@@ -1,17 +1,16 @@
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import FavCard from "../components/favCard";
+import Card from "../components/card";
 
-function Favorites(props) {
-	console.log("favorites", props);
+function Favorites({ onClick }) {
 	const [data, setData] = useState([]);
-	console.log(data);
+
 	useEffect(() => {
 		const savedMovie = !Cookies.get("fav")
 			? JSON.stringify([])
 			: Cookies.get("fav");
 		setData(JSON.parse(savedMovie));
-	}, []);
+	}, [onClick]);
 
 	return (
 		<div>
@@ -24,6 +23,7 @@ function Favorites(props) {
 			>
 				Favorites
 			</h1>
+
 			<div
 				className="row"
 				style={{
@@ -33,18 +33,11 @@ function Favorites(props) {
 				}}
 			>
 				{data?.map((item, i) => (
-					<FavCard key={i} {...item} />
+					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
 		</div>
 	);
-}
-export async function getStaticProps(context) {
-	return {
-		props: {
-			name: "Aydın",
-		},
-	};
 }
 
 export default Favorites;
