@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import { Nav } from "react-bootstrap";
 
 export default function Navbar(props) {
 	const [inputval, setInputval] = useState("");

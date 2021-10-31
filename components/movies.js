@@ -1,8 +1,6 @@
 import useSWR from "swr";
 import { fetcher } from "../functions/fetcher";
 import Card from "../components/card";
-import { useState, useEffect } from "react";
-import Cookies from "js-cookie";
 
 export default function Movies({ onClick }) {
 	const url = "http://localhost:3000/api/movies";
