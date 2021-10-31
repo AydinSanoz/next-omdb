@@ -1,7 +1,8 @@
 #title {
 	background-color: brown;
 	text-align: center;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 	color: aliceblue;
 }
 #overflowH {
@@ -22,7 +23,7 @@
 	display: flex;
 	flex-direction: column;
 	text-align: justify;
-	margin-top: 150px;
+	margin-top: 20px;
 	padding: 30px;
 }
 #aboutContainer h1,

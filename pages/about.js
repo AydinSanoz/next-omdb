@@ -1,10 +1,7 @@
-import Cookies from "js-cookie";
-import Image from "next/image";
-
 function About(props) {
 	return (
 		<div id="aboutContainer">
-			<h1>Lorem, ipsum.</h1>
+			<h1 id="title">Lorem, ipsum.</h1>
 
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aliquam
