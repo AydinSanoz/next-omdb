@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 # Features
--- Boostrap is used for navbar component
--- Movies Series and Episodes data fetched from http://www.omdbapi.com
+- Boostrap is used for navbar component
+-- Movies Series and Episodes data fetched from [http://www.omdbapi.com]
 -- All data listed in homePAge with styled card
 -- Search function at all pages 
 -- Persistent favlist build with for favorites page
