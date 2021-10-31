@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import "../styles/styles.css";
-import "../styles/Home.module.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Layout from "../components/layout";
 import { useState, useEffect } from "react";
@@ -32,7 +31,7 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<Layout>
-			<Component {...pageProps} onClick={toggleToFav} />;
+			<Component {...pageProps} onClick={toggleToFav} />
 		</Layout>
 	);
 }

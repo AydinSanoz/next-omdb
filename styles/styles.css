@@ -1,0 +1,32 @@
+#title {
+	background-color: brown;
+	text-align: center;
+	margin-top: 1rem;
+	color: aliceblue;
+}
+#overflowH {
+	overflow-x: auto;
+	overflow-y: hidden;
+	flex-wrap: nowrap;
+}
+
+#floatLeft {
+	float: left;
+	margin-right: 1rem;
+}
+#floatRight {
+	float: right;
+	margin-left: 1rem;
+}
+#aboutContainer {
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	margin-top: 150px;
+	padding: 30px;
+}
+#aboutContainer h1,
+#aboutContainer h2,
+#aboutContainer h3 {
+	text-align: center;
+}

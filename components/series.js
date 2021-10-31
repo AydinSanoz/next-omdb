@@ -17,23 +17,8 @@ export default function Series({ onClick }) {
 
 	return (
 		<div>
-			<h1
-				style={{
-					backgroundColor: "gray",
-					textAlign: "center",
-					marginTop: "1rem",
-				}}
-			>
-				Series
-			</h1>
-			<div
-				className="row"
-				style={{
-					overflowX: "auto",
-					overflowY: "hidden",
-					flexWrap: "nowrap",
-				}}
-			>
+			<h1 id="title">Series</h1>
+			<div className="row" id="overflowH">
 				{data.map((item, i) => (
 					<Card key={i} item={item} onClick={onClick} />
 				))}

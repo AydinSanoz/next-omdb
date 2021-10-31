@@ -13,29 +13,14 @@ export default function Movies({ onClick }) {
 	});
 	if (error) {
 		console.log("error occured");
-		return null;
+		return <h1>Not Found Try another Search</h1>;
 	}
 	if (!data) return <div>loading</div>;
 
 	return (
 		<div>
-			<h1
-				style={{
-					backgroundColor: "gray",
-					textAlign: "center",
-					marginTop: "1rem",
-				}}
-			>
-				Movies
-			</h1>
-			<div
-				className="row"
-				style={{
-					overflowX: "auto",
-					overflowY: "hidden",
-					flexWrap: "nowrap",
-				}}
-			>
+			<h1 id="title">Movies</h1>
+			<div className="row" id="overflowH">
 				{data.map((item, i) => (
 					<Card key={i} item={item} onClick={onClick} />
 				))}

@@ -14,24 +14,9 @@ function Favorites({ onClick }) {
 
 	return (
 		<div>
-			<h1
-				style={{
-					backgroundColor: "gray",
-					textAlign: "center",
-					marginTop: "1rem",
-				}}
-			>
-				Favorites
-			</h1>
+			<h1 id="title">Favorites</h1>
 
-			<div
-				className="row"
-				style={{
-					overflowX: "auto",
-					overflowY: "hidden",
-					flexWrap: "nowrap",
-				}}
-			>
+			<div className="row" id="overflowH">
 				{data?.map((item, i) => (
 					<Card key={i} item={item} onClick={onClick} />
 				))}
