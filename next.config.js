@@ -1,3 +1,11 @@
 module.exports = {
-  reactStrictMode: true,
-}
+	reactStrictMode: true,
+	async rewrites() {
+		return [
+			{
+				source: "/api/:path*",
+				destination: "http://http://www.omdbapi.com/:path*",
+			},
+		];
+	},
+};
