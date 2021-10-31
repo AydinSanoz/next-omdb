@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 # Features
+
+Open [https://next-omdb.vercel.app/](https://next-omdb.vercel.app/) with your browser to see the result.
+
 - Boostrap is used for navbar component
 - Movies Series and Episodes data fetched from [http://www.omdbapi.com]
 - All data listed in homePAge with styled card
