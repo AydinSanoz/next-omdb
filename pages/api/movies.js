@@ -7,7 +7,7 @@ export default (req, res) => {
 	axios
 		.get(BASEURL, {
 			method:"HEAD",
-			mode:"no cors",
+			mode:"no-cors",
 			params: {
 				apikey: APIKEY,
 				s: req.cookies.search || "all",
