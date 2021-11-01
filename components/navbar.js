@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import * as Icon from "./Icons";
 
 export default function Navbar(props) {
 	const [inputval, setInputval] = useState("");
@@ -14,6 +15,10 @@ export default function Navbar(props) {
 	return (
 		<nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 			<div className="container-fluid">
+				<div id="avatar">
+					<Icon.UserTieSolid color="white" />
+					<span id="counterSpan">{props.favCounter}</span>
+				</div>
 				<Link href="/">
 					<a className="navbar-brand">
 						<Image src={require("../assets/imdb.png")} width="40" height="40" />
@@ -32,7 +37,7 @@ export default function Navbar(props) {
 				</button>
 
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+					<ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
 						<li className="nav-item">
 							<Link href="/">
 								<a className="nav-link active" aria-current="page">
@@ -52,7 +57,8 @@ export default function Navbar(props) {
 							</Link>
 						</li>
 					</ul>
-					<form className="d-flex" action="/">
+
+					<form className="d-flex " action="/">
 						<input
 							className="form-control me-2"
 							type="search"

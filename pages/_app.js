@@ -4,14 +4,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import Layout from "../components/layout";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import useSWR from "swr";
+import { fetcher } from "../functions/fetcher";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, ...props }) {
 	const [selectedMovie, setSelectedMovie] = useState();
-	const [selectedStat, setSelectedStat] = useState("");
 	const [favList, setFavList] = useState([]);
+	const [favCounter, setFavCounter] = useState("");
 
 	useEffect(() => {
 		import("bootstrap/dist/js/bootstrap");
+		setFavCounter(JSON.parse(Cookies.get("fav")).length);
 	}, []);
 
 	useEffect(() => {
@@ -23,19 +26,19 @@ function MyApp({ Component, pageProps }) {
 
 	function toggleToFav(val) {
 		setSelectedMovie(val);
-		const indexofitem = favList.findIndex((item) => item.imdbID === val.imdbID);
-		console.log("index", indexofitem);
-		indexofitem === -1
+		const indexOfItem = favList.findIndex(
+			(item) => item?.imdbID === val?.imdbID
+		);
+		indexOfItem === -1
 			? (favList = [...favList, val])
-			: favList.splice(indexofitem, 1);
+			: favList.splice(indexOfItem, 1);
 		setFavList(favList);
-		console.log(favList);
-
+		setFavCounter(favList.length);
 		Cookies.set("fav", JSON.stringify(favList));
 	}
 
 	return (
-		<Layout>
+		<Layout favCounter={favCounter}>
 			<Component {...pageProps} onClick={toggleToFav} />
 		</Layout>
 	);
