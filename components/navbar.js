@@ -31,11 +31,7 @@ export default function Navbar(props) {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 
-				<div
-					className="collapse navbar-collapse"
-					id="navbarSupportedContent"
-					style={{ display: "flex" }}
-				>
+				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
 							<Link href="/">
@@ -45,13 +41,13 @@ export default function Navbar(props) {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link href="about">
+							<Link href="/about">
 								<a className="nav-link">About</a>
 							</Link>
 						</li>
 
 						<li className="nav-item">
-							<Link href="favorites">
+							<Link href="/favorites">
 								<a className="nav-link active">Favorites</a>
 							</Link>
 						</li>
@@ -60,7 +56,7 @@ export default function Navbar(props) {
 						<input
 							className="form-control me-2"
 							type="search"
-							placeholder="Search"
+							placeholder="Enter a keyword"
 							aria-label="Search"
 							name="s"
 							onChange={onChange}

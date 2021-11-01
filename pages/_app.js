@@ -7,7 +7,12 @@ import Cookies from "js-cookie";
 
 function MyApp({ Component, pageProps }) {
 	const [selectedMovie, setSelectedMovie] = useState();
+	const [selectedStat, setSelectedStat] = useState("");
 	const [favList, setFavList] = useState([]);
+
+	useEffect(() => {
+		import("bootstrap/dist/js/bootstrap");
+	}, []);
 
 	useEffect(() => {
 		const savedMovie = !Cookies.get("fav")
