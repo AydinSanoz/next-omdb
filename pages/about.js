@@ -87,7 +87,9 @@ function About(props) {
 				inventore illo laborum maiores numquam laudantium, quo minus ad sed
 				maxime hic dolorem! Odit, ullam quas corrupti incidunt adipisci
 				inventore numquam eaque.
-				<hr></hr>
+			</p>
+			<hr />
+			<p>
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae,
 				mollitia explicabo totam officia sed incidunt placeat qui quis
 				accusantium culpa. Quisquam inventore magnam architecto ipsam,

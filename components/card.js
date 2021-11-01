@@ -1,7 +1,16 @@
+import { useEffect, useState } from "react";
+import * as Icon from "../components/Icons/index";
+
 export default function Card({ item, onClick }) {
 	const noImg = "https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com";
+
+	const [data, setData] = useState([]);
+	const [selected, setSelected] = useState("");
+
+	console.log("Card Saved Movie", data);
+
 	return (
-		<div className="card container-sm" style={{ width: 200 }}>
+		<div className="card col-6" style={{ width: 200 }}>
 			<img
 				src={item.Poster === "N/A" ? noImg : item.Poster}
 				className="card-img-top"
@@ -12,9 +21,12 @@ export default function Card({ item, onClick }) {
 			<div className="card-body">
 				<h5 className="card-title mx-auto">{item.Title}</h5>
 			</div>
-
-			<a className="btn btn-primary" onClick={() => onClick(item)}>
-				Toggle to Fav
+			<a
+				onClick={() => {
+					onClick(item);
+				}}
+			>
+				{item.selected ? <Icon.HeartSolid /> : <Icon.HeartRegular />}
 			</a>
 		</div>
 	);
