@@ -4,11 +4,11 @@ import Series from "../components/series";
 
 function HomePage({ onClick }) {
 	return (
-		<div>
+		<>
 			<Movies onClick={onClick} />
 			<Episodes onClick={onClick} />
 			<Series onClick={onClick} />
-		</div>
+		</>
 	);
 }
 

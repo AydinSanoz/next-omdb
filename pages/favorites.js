@@ -13,15 +13,15 @@ function Favorites({ onClick }) {
 	}, [onClick]);
 
 	return (
-		<div>
+		<>
 			<h1 id="title">Favorites</h1>
 
-			<div className="row" id="overflowH">
+			<div className="row ">
 				{data?.map((item, i) => (
 					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
-		</div>
+		</>
 	);
 }
 
