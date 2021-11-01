@@ -31,3 +31,25 @@
 #aboutContainer h3 {
 	text-align: center;
 }
+
+#avatar {
+	position: relative;
+	color: white;
+	margin-left: 20px;
+	margin-right: 40px;
+	align-self: center;
+}
+#counterSpan {
+	border-radius: 15px;
+	border: 1px solid white;
+	text-align: center;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	margin-top: -10px;
+	margin-left: -10px;
+}
+#icon {
+	align-self: flex-end;
+	margin-bottom: 10px;
+}

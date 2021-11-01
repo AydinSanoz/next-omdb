@@ -11,5 +11,6 @@ export default (req, res) => {
 				type: "series",
 			},
 		})
-		.then(({ data }) => res.status(200).json(data.Search));
+		.then(({ data }) => res.status(200).json(data.Search))
+		.catch((err) => res.status(400).json({ error: err }));
 };
