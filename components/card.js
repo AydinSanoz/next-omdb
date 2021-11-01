@@ -7,8 +7,6 @@ export default function Card({ item, onClick }) {
 	const [data, setData] = useState([]);
 	const [selected, setSelected] = useState("");
 
-	console.log("Card Saved Movie", data);
-
 	return (
 		<div className="card col-6" style={{ width: 200 }}>
 			<img
@@ -22,11 +20,12 @@ export default function Card({ item, onClick }) {
 				<h5 className="card-title mx-auto">{item.Title}</h5>
 			</div>
 			<a
+				id="icon"
 				onClick={() => {
 					onClick(item);
 				}}
 			>
-				{item.selected ? <Icon.HeartSolid /> : <Icon.HeartRegular />}
+				<Icon.HeartRegular color="red" />
 			</a>
 		</div>
 	);
