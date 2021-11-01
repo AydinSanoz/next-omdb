@@ -11,7 +11,7 @@ export default function Series({ onClick }) {
 	});
 	if (error) {
 		console.log("error occured");
-		return null;
+		return <h1>Not Found Try another serie Search</h1>;
 	}
 	if (!data) return <div>loading</div>;
 
