@@ -1,17 +1,18 @@
 import "../styles/globals.css";
 import "../styles/styles.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "next-pagination/dist/index.css";
 import Layout from "../components/layout";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps, ...props }) {
 	const [selectedMovie, setSelectedMovie] = useState();
 	const [favList, setFavList] = useState([]);
 	const [favCounter, setFavCounter] = useState("");
 	const [selected, setSelected] = useState("true");
-	const path = useRouter().pathname;
+	const route = useRouter().route;
 
 	useEffect(() => {
 		import("bootstrap/dist/js/bootstrap");
@@ -41,7 +42,7 @@ function MyApp({ Component, pageProps, ...props }) {
 	}
 
 	return (
-		<Layout favCounter={favCounter} path={path}>
+		<Layout favCounter={favCounter} route={route}>
 			<Component
 				{...pageProps}
 				onClick={toggleToFav}

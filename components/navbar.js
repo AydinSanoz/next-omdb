@@ -4,8 +4,7 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import * as Icon from "./Icons";
 
-export default function Navbar({ path, ...props }) {
-	console.log(path);
+export default function Navbar({ route, ...props }) {
 	const [inputval, setInputval] = useState("");
 	const onChange = (e) => {
 		setInputval(e.target.value);
@@ -47,7 +46,7 @@ export default function Navbar({ path, ...props }) {
 						<li className="nav-item">
 							<Link href="/">
 								<a
-									className={path === "/" ? "nav-link active" : "nav-link"}
+									className={route === "/" ? "nav-link active" : "nav-link"}
 									aria-current="page"
 								>
 									Home
@@ -57,7 +56,9 @@ export default function Navbar({ path, ...props }) {
 						<li className="nav-item">
 							<Link href="/about">
 								<a
-									className={path === "/about" ? "nav-link active" : "nav-link"}
+									className={
+										route === "/about" ? "nav-link active" : "nav-link"
+									}
 								>
 									About
 								</a>
@@ -68,7 +69,7 @@ export default function Navbar({ path, ...props }) {
 							<Link href="/favorites">
 								<a
 									className={
-										path === "/favorites" ? "nav-link active" : "nav-link"
+										route === "/favorites" ? "nav-link active" : "nav-link"
 									}
 								>
 									Favorites
