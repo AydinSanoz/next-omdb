@@ -1,11 +1,11 @@
 import Movies from "../components/movies";
 import Series from "../components/series";
 
-function HomePage({ onClick, favList, selectedMovie, ...props }) {
+function HomePage(props) {
 	return (
 		<>
-			<Movies onClick={onClick} />
-			<Series onClick={onClick} />
+			<Movies {...props} />
+			<Series {...props} />
 		</>
 	);
 }

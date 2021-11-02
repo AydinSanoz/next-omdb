@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps, ...props }) {
 	const [selectedMovie, setSelectedMovie] = useState();
 	const [favList, setFavList] = useState([]);
 	const [favCounter, setFavCounter] = useState("");
+	const [selected, setSelected] = useState("true");
 
 	useEffect(() => {
 		import("bootstrap/dist/js/bootstrap");
@@ -44,6 +45,7 @@ function MyApp({ Component, pageProps, ...props }) {
 				onClick={toggleToFav}
 				favList={favList}
 				selectedMovie={selectedMovie}
+				selected={selected}
 			/>
 		</Layout>
 	);

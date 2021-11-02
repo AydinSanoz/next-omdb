@@ -25,7 +25,11 @@ export default function Card({ item, onClick, ...props }) {
 					onClick(item);
 				}}
 			>
-				<Icon.HeartRegular color="red" />
+				{item.selected ? (
+					<Icon.HeartSolid color="red" />
+				) : (
+					<Icon.HeartRegular color="red" />
+				)}
 			</a>
 		</div>
 	);
