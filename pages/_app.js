@@ -39,7 +39,12 @@ function MyApp({ Component, pageProps, ...props }) {
 
 	return (
 		<Layout favCounter={favCounter}>
-			<Component {...pageProps} onClick={toggleToFav} />
+			<Component
+				{...pageProps}
+				onClick={toggleToFav}
+				favList={favList}
+				selectedMovie={selectedMovie}
+			/>
 		</Layout>
 	);
 }

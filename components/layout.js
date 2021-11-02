@@ -1,10 +1,10 @@
 import Navbar from "./navbar";
 
-export default function Layout({ children, favCounter }) {
+export default function Layout({ children, favCounter, ...props }) {
 	return (
 		<>
 			<Navbar favCounter={favCounter} />
-			<main>{children}</main>
+			<main id="main">{children}</main>
 		</>
 	);
 }

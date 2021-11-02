@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as Icon from "../components/Icons/index";
 
-export default function Card({ item, onClick }) {
+export default function Card({ item, onClick, ...props }) {
 	const noImg = "https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com";
 
 	const [data, setData] = useState([]);

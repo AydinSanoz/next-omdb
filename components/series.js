@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { fetcher } from "../functions/fetcher";
 import Card from "./card";
 
-export default function Series({ onClick }) {
+export default function Series({ onClick, ...props }) {
 	const url = "http://localhost:3000/api/series";
 	const { data, error } = useSWR(url, fetcher, {
 		// initialData: props,
