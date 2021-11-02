@@ -39,13 +39,7 @@ export default function Movies({ onClick, favList, selected, ...props }) {
 					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
-			<Pagination
-				total={data.totalResults}
-				size="10"
-				onClick={(val) => {
-					console.log(val);
-				}}
-			/>
+			<Pagination total={parseInt(data.totalResults)} size="10" />
 		</div>
 	);
 }
