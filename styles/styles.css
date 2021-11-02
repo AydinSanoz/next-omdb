@@ -4,6 +4,7 @@
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 	color: aliceblue;
+	border-radius: 10px;
 }
 #overflowH {
 	overflow-x: auto;
@@ -13,23 +14,26 @@
 
 #floatLeft {
 	float: left;
-	margin-right: 1rem;
 }
 #floatRight {
 	float: right;
-	margin-left: 1rem;
 }
 #aboutContainer {
 	display: flex;
+	justify-content: space-around;
 	flex-direction: column;
 	text-align: justify;
 	margin-top: 20px;
-	padding: 30px;
+	/* padding: 30px; */
 }
 #aboutContainer h1,
 #aboutContainer h2,
 #aboutContainer h3 {
 	text-align: center;
+}
+#aboutContainer p img {
+	width: fit-content;
+	padding: 10px;
 }
 
 #avatar {
@@ -52,4 +56,7 @@
 #icon {
 	align-self: flex-end;
 	margin-bottom: 10px;
+}
+#main {
+	margin: 0px 10px;
 }

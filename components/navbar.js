@@ -15,10 +15,12 @@ export default function Navbar(props) {
 	return (
 		<nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 			<div className="container-fluid">
-				<div id="avatar">
-					<Icon.UserTieSolid color="white" />
-					<span id="counterSpan">{props.favCounter}</span>
-				</div>
+				<Link href="/favorites">
+					<a id="avatar">
+						<Icon.UserTieSolid color="white" />
+						<span id="counterSpan">{props.favCounter}</span>
+					</a>
+				</Link>
 				<Link href="/">
 					<a className="navbar-brand">
 						<Image src={require("../assets/imdb.png")} width="40" height="40" />
