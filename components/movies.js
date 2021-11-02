@@ -30,7 +30,7 @@ export default function Movies({ onClick, favList, selected, ...props }) {
 	});
 
 	return (
-		<div>
+		<div id="rollerContainer">
 			<h1 id="title">Movies</h1>
 			<div className="row" id="overflowH">
 				{movies?.map((item, i) => (

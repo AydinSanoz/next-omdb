@@ -65,3 +65,23 @@
 	margin-right: auto;
 	justify-content: center;
 }
+#navbar-nav {
+	flex-direction: row;
+}
+#navbar-nav * {
+	margin-right: 10px;
+}
+.popUpContent {
+	display: flex;
+	justify-content: space-between;
+}
+
+.d-flex {
+	width: 40%;
+	min-width: 300px;
+	max-width: 500px;
+}
+#rollerContainer {
+	margin-right: 10px;
+	margin-left: 10px;
+}

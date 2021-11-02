@@ -29,7 +29,7 @@ export default function Series({ onClick, favList, selected, ...props }) {
 	});
 
 	return (
-		<div>
+		<div id="rollerContainer">
 			<h1 id="title">Series</h1>
 			<div className="row" id="overflowH">
 				{series.map((item, i) => (
