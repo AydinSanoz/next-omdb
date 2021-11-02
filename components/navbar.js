@@ -4,7 +4,8 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import * as Icon from "./Icons";
 
-export default function Navbar(props) {
+export default function Navbar({ path, ...props }) {
+	console.log(path);
 	const [inputval, setInputval] = useState("");
 	const onChange = (e) => {
 		setInputval(e.target.value);
@@ -45,20 +46,33 @@ export default function Navbar(props) {
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0 " id="navbar-nav">
 						<li className="nav-item">
 							<Link href="/">
-								<a className="nav-link active" aria-current="page">
+								<a
+									className={path === "/" ? "nav-link active" : "nav-link"}
+									aria-current="page"
+								>
 									Home
 								</a>
 							</Link>
 						</li>
 						<li className="nav-item">
 							<Link href="/about">
-								<a className="nav-link">About</a>
+								<a
+									className={path === "/about" ? "nav-link active" : "nav-link"}
+								>
+									About
+								</a>
 							</Link>
 						</li>
 
 						<li className="nav-item">
 							<Link href="/favorites">
-								<a className="nav-link active">Favorites</a>
+								<a
+									className={
+										path === "/favorites" ? "nav-link active" : "nav-link"
+									}
+								>
+									Favorites
+								</a>
 							</Link>
 						</li>
 					</ul>

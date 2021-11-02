@@ -4,14 +4,14 @@ import "bootstrap/dist/css/bootstrap.css";
 import Layout from "../components/layout";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import useSWR from "swr";
-import { fetcher } from "../lib/fetcher";
+import { useRouter } from "next/dist/client/router";
 
 function MyApp({ Component, pageProps, ...props }) {
 	const [selectedMovie, setSelectedMovie] = useState();
 	const [favList, setFavList] = useState([]);
 	const [favCounter, setFavCounter] = useState("");
 	const [selected, setSelected] = useState("true");
+	const path = useRouter().pathname;
 
 	useEffect(() => {
 		import("bootstrap/dist/js/bootstrap");
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps, ...props }) {
 	}
 
 	return (
-		<Layout favCounter={favCounter}>
+		<Layout favCounter={favCounter} path={path}>
 			<Component
 				{...pageProps}
 				onClick={toggleToFav}
