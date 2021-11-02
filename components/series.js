@@ -2,6 +2,8 @@ import useSWR from "swr";
 import { fetcher } from "../lib/fetcher";
 import Card from "./card";
 import { useState } from "react";
+import Cookies from "js-cookie";
+import Pagination from "next-pagination";
 
 export default function Series({ onClick, favList, selected, ...props }) {
 	const [series, setSeries] = useState([]);
@@ -17,7 +19,7 @@ export default function Series({ onClick, favList, selected, ...props }) {
 	}
 	if (!data) return <div>loading</div>;
 
-	data.map((item) => {
+	data?.Search?.map((item) => {
 		const index = favList.findIndex((favItem) => {
 			return item.imdbID === favItem.imdbID;
 		});
@@ -36,6 +38,7 @@ export default function Series({ onClick, favList, selected, ...props }) {
 					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
+			<Pagination total={data.totalResults} size="10" />
 		</div>
 	);
 }
