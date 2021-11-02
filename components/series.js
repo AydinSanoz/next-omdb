@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { fetcher } from "../functions/fetcher";
+import { fetcher } from "../lib/fetcher";
 import Card from "./card";
 import { useState } from "react";
 

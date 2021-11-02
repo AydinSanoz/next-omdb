@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import useSWR from "swr";
-import { fetcher } from "../functions/fetcher";
+import { fetcher } from "../lib/fetcher";
 
 function MyApp({ Component, pageProps, ...props }) {
 	const [selectedMovie, setSelectedMovie] = useState();
