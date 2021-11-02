@@ -10,6 +10,7 @@
     "svgr": "npx @svgr/cli --replace-attr-values '#fff=currentColor' --svg-props 'width=25px' -d components/Icons/ assets"
   },
   "dependencies": {
+    "@popperjs/core": "^2.10.2",
     "axios": "^0.24.0",
     "bootstrap": "^5.1.3",
     "js-cookie": "^3.0.1",
