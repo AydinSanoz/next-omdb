@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps, ...props }) {
 
 	useEffect(() => {
 		import("bootstrap/dist/js/bootstrap");
-		setFavCounter(JSON.parse(Cookies.get("fav")).length);
+		Cookies.get("fav")
+			? setFavCounter(JSON.parse(Cookies.get("fav")).length)
+			: null;
 	}, []);
 
 	useEffect(() => {
