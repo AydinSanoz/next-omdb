@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as Icon from "../components/Icons/index";
 
 export default function Card({ item, onClick, ...props }) {

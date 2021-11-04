@@ -1,26 +1,42 @@
 import useSWR from "swr";
-import { fetcher } from "../lib/fetcher";
 import Card from "../components/card";
 import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 import Pagination from "next-pagination";
 
-export default function Movies({ onClick, favList, selected, ...props }) {
+export default function Movies({ onClick, favList, selected, path, ...props }) {
 	const [movies, setMovies] = useState([]);
+	const [movieData, setMovieData] = useState([]);
+	const APIKEY = "10a28510";
+	const BASEURL = "http://www.omdbapi.com";
 
-	const url = "http://localhost:3000/api/movies";
-	const { data, error } = useSWR(url, fetcher, {
-		// initialData: props,
-		revalidateOnMount: true,
-		revalidateOnFocus: true,
-	});
+	useEffect(() => {
+		const query = new URLSearchParams({
+			apikey: APIKEY,
+			type: "movie",
+			s: "avatar",
+		});
+		const newQuery = new URLSearchParams(path);
+		for (const [key, value] of newQuery.entries()) {
+			if (key === "s") {
+				query.set("s", value);
+			}
+			if (key === "page") {
+				query.set("page", value);
+			}
+		}
+		axios
+			.get(BASEURL, {
+				params: query,
+			})
+			.then(({ data }) => {
+				setMovieData(data);
+			})
+			.catch((err) => console.log({ err: err }));
+	}, [path]);
 
-	if (error) {
-		console.log("error occured");
-		return <h1>Not Found Try another Search</h1>;
-	}
-	if (!data) return <div>loading</div>;
-
-	data?.Search?.map((item) => {
+	movieData?.Search?.map((item) => {
 		const index = favList.findIndex((favItem) => {
 			return item.imdbID === favItem.imdbID;
 		});
@@ -39,7 +55,7 @@ export default function Movies({ onClick, favList, selected, ...props }) {
 					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
-			<Pagination total={parseInt(data.totalResults)} size="10" />
+			<Pagination total={movieData.totalResults} />
 		</div>
 	);
 }

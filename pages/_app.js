@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps, ...props }) {
 	const [favList, setFavList] = useState([]);
 	const [favCounter, setFavCounter] = useState("");
 	const [selected, setSelected] = useState("true");
-	const route = useRouter().route;
+	const { route, asPath } = useRouter();
+	const path = asPath.slice(2);
 
 	useEffect(() => {
 		import("bootstrap/dist/js/bootstrap");
@@ -49,6 +50,7 @@ function MyApp({ Component, pageProps, ...props }) {
 				favList={favList}
 				selectedMovie={selectedMovie}
 				selected={selected}
+				path={path}
 			/>
 		</Layout>
 	);

@@ -1,25 +1,40 @@
-import useSWR from "swr";
-import { fetcher } from "../lib/fetcher";
 import Card from "./card";
 import { useState } from "react";
-import Cookies from "js-cookie";
 import Pagination from "next-pagination";
+import { useEffect } from "react";
+import axios from "axios";
 
-export default function Series({ onClick, favList, selected, ...props }) {
+export default function Series({ onClick, favList, selected, path, ...props }) {
 	const [series, setSeries] = useState([]);
-	const url = "http://localhost:3000/api/series";
-	const { data, error } = useSWR(url, fetcher, {
-		// initialData: props,
-		revalidateOnMount: true,
-		revalidateOnFocus: true,
-	});
-	if (error) {
-		console.log("error occured");
-		return <h1>Not Found Try another serie Search</h1>;
-	}
-	if (!data) return <div>loading</div>;
+	const [seriesData, setSeriesData] = useState([]);
+	const APIKEY = "10a28510";
+	const BASEURL = "http://www.omdbapi.com";
+	useEffect(() => {
+		const query = new URLSearchParams({
+			apikey: APIKEY,
+			type: "series",
+			s: "avatar",
+		});
+		const newQuery = new URLSearchParams(path);
+		for (const [key, value] of newQuery.entries()) {
+			if (key === "s") {
+				query.set("s", value);
+			}
+			if (key === "page") {
+				query.set("page", value);
+			}
+		}
+		axios
+			.get(BASEURL, {
+				params: query,
+			})
+			.then(({ data }) => {
+				setSeriesData(data);
+			})
+			.catch((err) => console.log({ err: err }));
+	}, [path]);
 
-	data?.Search?.map((item) => {
+	seriesData?.Search?.map((item) => {
 		const index = favList.findIndex((favItem) => {
 			return item.imdbID === favItem.imdbID;
 		});
@@ -29,7 +44,6 @@ export default function Series({ onClick, favList, selected, ...props }) {
 			series = [...series, { ...item, selected }];
 		}
 	});
-
 	return (
 		<div id="rollerContainer">
 			<h1 id="title">Series</h1>
@@ -38,7 +52,7 @@ export default function Series({ onClick, favList, selected, ...props }) {
 					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
-			<Pagination total={parseInt(data.totalResults)} size="10" />
+			<Pagination total={seriesData.totalResults} size="10" />
 		</div>
 	);
 }

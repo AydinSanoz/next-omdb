@@ -1,17 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Cookies from "js-cookie";
-import { useState } from "react";
 import * as Icon from "./Icons";
 
 export default function Navbar({ route, ...props }) {
-	const [inputval, setInputval] = useState("");
-	const onChange = (e) => {
-		setInputval(e.target.value);
-	};
-	const onClick = () => {
-		Cookies.set("search", inputval);
-	};
 	return (
 		<nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 			<div className="container-fluid">
@@ -85,14 +76,9 @@ export default function Navbar({ route, ...props }) {
 							placeholder="Enter a keyword"
 							aria-label="Search"
 							name="s"
-							onChange={onChange}
 						/>
 						input
-						<button
-							className="btn btn-outline-success"
-							type="submit"
-							onClick={onClick}
-						>
+						<button className="btn btn-outline-success" type="submit">
 							Search
 						</button>
 					</form>
