@@ -85,3 +85,6 @@
 	margin-right: 10px;
 	margin-left: 10px;
 }
+#card-body {
+	padding: 1px !important;
+}

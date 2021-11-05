@@ -16,21 +16,21 @@ export default function Card({ item, onClick, ...props }) {
 				width="200"
 				height="250"
 			/>
-			<div className="card-body">
+			<div className="card-body" id="card-body">
 				<h5 className="card-title mx-auto">{item.Title}</h5>
+				<a
+					id="icon"
+					onClick={() => {
+						onClick(item);
+					}}
+				>
+					{item.selected ? (
+						<Icon.HeartSolid color="red" />
+					) : (
+						<Icon.HeartRegular color="red" />
+					)}
+				</a>
 			</div>
-			<a
-				id="icon"
-				onClick={() => {
-					onClick(item);
-				}}
-			>
-				{item.selected ? (
-					<Icon.HeartSolid color="red" />
-				) : (
-					<Icon.HeartRegular color="red" />
-				)}
-			</a>
 		</div>
 	);
 }
