@@ -1,4 +1,3 @@
-import useSWR from "swr";
 import Card from "../components/card";
 import { useState } from "react";
 import axios from "axios";
@@ -8,6 +7,7 @@ import Pagination from "next-pagination";
 export default function Movies({ onClick, favList, selected, path, ...props }) {
 	const [movies, setMovies] = useState([]);
 	const [movieData, setMovieData] = useState([]);
+	const [total, setTotal] = useState("");
 	const APIKEY = "10a28510";
 	const BASEURL = "http://www.omdbapi.com";
 
@@ -32,6 +32,7 @@ export default function Movies({ onClick, favList, selected, path, ...props }) {
 			})
 			.then(({ data }) => {
 				setMovieData(data);
+				setTotal(Number(data?.totalResults));
 			})
 			.catch((err) => console.log({ err: err }));
 	}, [path]);
@@ -55,7 +56,7 @@ export default function Movies({ onClick, favList, selected, path, ...props }) {
 					<Card key={i} item={item} onClick={onClick} />
 				))}
 			</div>
-			<Pagination total={movieData.totalResults} />
+			<Pagination total={total} />
 		</div>
 	);
 }

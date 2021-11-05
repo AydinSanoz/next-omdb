@@ -13,14 +13,20 @@ const cors = initMiddleware(
 export default async function Test(req, res) {
 	// Run cors
 	await cors(req, res);
+	const { BASEURL, APIKEY } = process.env;
+	// const url = !usp
+	// 	? BASEURL + `?${(apikey = APIKEY)}`
+	// 	: BASEURL + `?${(apikey = APIKEY)}+&${usp.toString()}`;
 
-	const response = await fetch(
-		`http://www.omdbapi.com${req.cookies.search}&apikey=10a28510`,
-		[]
-	);
-	const data = await response.json();
-	console.log(req.cookies);
+	try {
+		const response = await fetch(
+			`http://www.omdbapi.com/?apikey=10a28510&type=movie&s=home`
+		);
+		const data = await response.json();
+		res.json(data);
+	} catch (error) {
+		res.json({ Error: error });
+	}
 
 	// Rest of the API logic
-	res.json(data);
 }

@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps, ...props }) {
 	}
 
 	return (
-		<Layout favCounter={favCounter} route={route}>
+		<Layout favCounter={favCounter} route={route} {...props}>
 			<Component
 				{...pageProps}
 				onClick={toggleToFav}
@@ -51,9 +51,20 @@ function MyApp({ Component, pageProps, ...props }) {
 				selectedMovie={selectedMovie}
 				selected={selected}
 				path={path}
+				{...props}
 			/>
 		</Layout>
 	);
 }
+
+// export async function getStaticProps() {
+// 	const { BASEURL, APIKEY } = process.env;
+// 	return {
+// 		props: {
+// 			BASEURL,
+// 			APIKEY,
+// 		},
+// 	};
+// }
 
 export default MyApp;
