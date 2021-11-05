@@ -8,7 +8,7 @@ export default function Series({ onClick, favList, selected, path, ...props }) {
 	const [series, setSeries] = useState([]);
 	const [seriesData, setSeriesData] = useState([]);
 	const APIKEY = "10a28510";
-	const BASEURL = "http://www.omdbapi.com";
+	const BASEURL = "https://www.omdbapi.com";
 	useEffect(() => {
 		const query = new URLSearchParams({
 			apikey: APIKEY,

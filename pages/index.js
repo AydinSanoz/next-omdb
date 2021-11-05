@@ -5,7 +5,7 @@ function HomePage(props) {
 	return (
 		<>
 			<Movies {...props} />
-			{/* <Series {...props} /> */}
+			<Series {...props} />
 		</>
 	);
 }
