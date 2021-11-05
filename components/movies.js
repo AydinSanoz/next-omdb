@@ -9,7 +9,7 @@ export default function Movies({ onClick, favList, selected, path, ...props }) {
 	const [movieData, setMovieData] = useState([]);
 	const [total, setTotal] = useState("");
 	const APIKEY = "10a28510";
-	const BASEURL = "http://www.omdbapi.com";
+	const BASEURL = "https://www.omdbapi.com";
 
 	useEffect(() => {
 		const query = new URLSearchParams({
