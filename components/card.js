@@ -8,7 +8,7 @@ export default function Card({ item, onClick, ...props }) {
 	const [selected, setSelected] = useState("");
 
 	return (
-		<div className="card col-6" style={{ width: 200 }}>
+		<div className="card col-6" id="card-container">
 			<img
 				src={item.Poster === "N/A" ? noImg : item.Poster}
 				className="card-img-top"
